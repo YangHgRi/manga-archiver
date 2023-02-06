@@ -25,7 +25,12 @@ public class Main {
         File startPath = new File(scanner.next());
         if (startPath.isDirectory()) {
             walkFileTree(startPath);
+        } else {
+            System.out.println("请输入目录而非文件");
         }
+        scanner.nextLine();
+        System.out.println("摁下回车结束程序");
+        scanner.nextLine();
     }
 
     private static void walkFileTree(File file) throws IOException, InterruptedException {
@@ -43,8 +48,8 @@ public class Main {
         }
         if (fs.length == imageCounter && imageCounter != 0) {
             String chapterPath = file.getAbsolutePath();
-            // 二百个 - 作为分隔符
-            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            // 在字号为 12 磅的 windows terminal 客户端中正好占满一行的 "-"
+            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");
             System.out.println("章节目录：" + chapterPath);
             startArchive(file);
             System.out.println("\n放入回收站：" + chapterPath);
