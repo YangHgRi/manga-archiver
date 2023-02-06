@@ -5,7 +5,6 @@ import com.sun.jna.platform.FileUtils;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -23,7 +22,6 @@ public class Main {
         System.out.println("请输入开始路径");
         Scanner scanner = new Scanner(System.in);
         File startPath = new File(scanner.next());
-        System.out.println(Objects.requireNonNull(startPath.listFiles()).length);
         if (startPath.isDirectory()) {
             walkFileTree(startPath);
         }
@@ -44,9 +42,9 @@ public class Main {
         }
         if (fs.length == imageCounter && imageCounter != 0) {
             String chapterPath = file.getAbsolutePath();
-            System.out.println("章节目录：" + chapterPath);
+            System.out.println("\n章节目录：" + chapterPath);
             startArchive(file);
-            System.out.println("放入回收站：" + chapterPath);
+            System.out.println("\n放入回收站：" + chapterPath);
             fileUtils.moveToTrash(file);
         }
     }
