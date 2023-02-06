@@ -20,6 +20,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("请输入开始路径");
+        System.out.println("默认：D:\\MediaLib\\エロ视界");
         Scanner scanner = new Scanner(System.in);
         File startPath = new File(scanner.next());
         if (startPath.isDirectory()) {
