@@ -42,7 +42,9 @@ public class Main {
         }
         if (fs.length == imageCounter && imageCounter != 0) {
             String chapterPath = file.getAbsolutePath();
-            System.out.println("\n章节目录：" + chapterPath);
+            // 二百个 - 作为分隔符
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("章节目录：" + chapterPath);
             startArchive(file);
             System.out.println("\n放入回收站：" + chapterPath);
             fileUtils.moveToTrash(file);
